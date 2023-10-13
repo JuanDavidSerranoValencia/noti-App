@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Core.Entities;
 
-public class MaestroVsSubmodulo
+public class MaestroVsSubmodulo:BaseEntity
 {
     [Required]
     public int IdModuloMaestroFk { get; set; }

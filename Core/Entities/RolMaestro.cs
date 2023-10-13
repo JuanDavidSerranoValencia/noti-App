@@ -10,11 +10,11 @@ public class RolMaestro : BaseEntity
 {
 
     [Required]
-    public int IdRol { get; set; }
+    public int IdRolFk { get; set; }
     public Rol Rol { get; set; }
 
 
     [Required]
-    public int IdModuloMaestro { get; set; }
+    public int IdModuloMaestroFk { get; set; }
     public ModuloMaestro ModuloMaestro { get; set; }
 }
