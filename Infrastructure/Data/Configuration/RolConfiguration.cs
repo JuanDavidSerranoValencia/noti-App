@@ -18,7 +18,7 @@ namespace Infrastructure.Data.Configuration
             builder.HasKey(p => p.Id);
             builder.Property(p => p.Id);
 
-            builder.Property(p=>p.Nombre)
+            builder.Property(p=>p.NombreRol)
             .IsRequired()
             .HasMaxLength(50);
 
