@@ -41,7 +41,7 @@ namespace Infrastructure.Data.Configuration
             .WithMany(P=>P.ModulosNotificaciones)
             .HasForeignKey(P=>P.IdEstadoNotiFk);
 
-            builder.HasOne(P=>P.HiloRepuestaNoti)
+            builder.HasOne(P=>P.HiloRespuestaNoti)
             .WithMany(P=>P.ModulosNotificaciones)
             .HasForeignKey(P=>P.IdHiloNotiFk);
 

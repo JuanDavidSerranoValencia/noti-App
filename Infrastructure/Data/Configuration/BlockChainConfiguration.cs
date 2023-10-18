@@ -32,7 +32,7 @@ namespace Infrastructure.Data.Configuration
             .WithMany(p=>p.BlocksChains)
             .HasForeignKey(p=>p.IdTipoNotisFk);
 
-            builder.HasOne(p=>p.HiloRepuestaNoti)
+            builder.HasOne(p=>p.HiloRespuestaNoti)
             .WithMany(p=>p.BlocksChains)
             .HasForeignKey(p=>p.IdHiloRespuestaNotiFk);
 

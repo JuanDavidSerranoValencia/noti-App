@@ -17,7 +17,7 @@ namespace Core.Entities
         public Auditoria Auditoria { get; set; }
 
         public int IdHiloRespuestaNotiFk { get; set; }
-        public HiloRepuestaNoti HiloRepuestaNoti { get; set; }
+        public HiloRespuestaNoti HiloRespuestaNoti { get; set; }
     
     }
 }

@@ -22,7 +22,7 @@ public class NotiAppContext : DbContext
     public DbSet<RolMaestro> RolMaestros { get; set; }
     public DbSet<SubModulo> SubModulos { get; set; }
     public DbSet<Radicado> Radicados { get; set; }
-    public DbSet<HiloRepuestaNoti> HiloRepuestaNotis { get; set; }
+    public DbSet<HiloRespuestaNoti> HiloRespuestaNotis { get; set; }
     public DbSet<Formato> Formatos { get; set; }
     public DbSet<BlockChain> BlockChains { get; set; }
     public DbSet<Auditoria> Auditorias { get; set; }

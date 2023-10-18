@@ -20,7 +20,7 @@ namespace Core.Entities
 
 
         public int IdHiloNotiFk { get; set; }
-        public HiloRepuestaNoti HiloRepuestaNoti { get; set; }
+        public HiloRespuestaNoti HiloRespuestaNoti { get; set; }
     
 
         public int IdTipoRequerimientoFk { get; set; }

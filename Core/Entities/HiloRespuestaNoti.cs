@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Core.Entities
 {
-    public class HiloRepuestaNoti:BaseEntity
+    public class HiloRespuestaNoti:BaseEntity
     {
         public string NombreTipoHilo{ get; set; }
 

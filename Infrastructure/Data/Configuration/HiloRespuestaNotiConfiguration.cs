@@ -9,9 +9,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Infrastructure.Data.Configuration
 {
-    public class HiloRespuestaNotiConfiguration : IEntityTypeConfiguration<HiloRepuestaNoti>
+    public class HiloRespuestaNotiConfiguration : IEntityTypeConfiguration<HiloRespuestaNoti>
     {
-        public void Configure(EntityTypeBuilder<HiloRepuestaNoti> builder)
+        public void Configure(EntityTypeBuilder<HiloRespuestaNoti> builder)
         {
             builder.ToTable("hilorespuestanotificacion");
 

@@ -16,7 +16,7 @@ namespace ApiNotiApi.Profiles
             CreateMap<BlockChain,BlockChainDto>().ReverseMap();
             CreateMap<EstadoNotificacion,EstadoNotificacionDto>().ReverseMap();
             CreateMap<GenericoVsSubmodulo,GenericoVsSubmoduloDto>().ReverseMap();
-            CreateMap<HiloRepuestaNoti,HiloRespuestaNotiDto>().ReverseMap();
+            CreateMap<HiloRespuestaNoti,HiloRespuestaNotiDto>().ReverseMap();
             CreateMap<MaestroVsSubmodulo,MaestroVsSubmoduloDto>().ReverseMap();
             CreateMap<ModuloMaestro,ModuloMaestroDto>().ReverseMap();
             CreateMap<ModuloNotificacion,ModuloNotificacionDto>().ReverseMap();

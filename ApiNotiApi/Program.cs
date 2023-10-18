@@ -18,13 +18,12 @@ builder.Services.AddApplicationServices();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-
-
 builder.Services.AddDbContext<NotiAppContext>(options =>
 {
     string connectionString = builder.Configuration.GetConnectionString("MySqlConex");
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
 });
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
