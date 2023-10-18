@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Infrastructure.Migrations
+namespace Infrastructure.Data.Migrations
 {
     /// <inheritdoc />
     public partial class InitialCreate : Migration
@@ -148,7 +148,6 @@ namespace Infrastructure.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     IdRolFk = table.Column<int>(type: "int", nullable: false),
-                    RolId = table.Column<int>(type: "int", nullable: true),
                     IdPermisoGenerioFk = table.Column<int>(type: "int", nullable: false),
                     IdMaestroSubmoduloFk = table.Column<int>(type: "int", nullable: false),
                     FechaCreacion = table.Column<DateTime>(type: "datetime", nullable: false),
@@ -170,10 +169,11 @@ namespace Infrastructure.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_genericosvssubmodulos_rol_RolId",
-                        column: x => x.RolId,
+                        name: "FK_genericosvssubmodulos_rol_IdRolFk",
+                        column: x => x.IdRolFk,
                         principalTable: "rol",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -188,9 +188,9 @@ namespace Infrastructure.Migrations
                 column: "IdPermisoGenerioFk");
 
             migrationBuilder.CreateIndex(
-                name: "IX_genericosvssubmodulos_RolId",
+                name: "IX_genericosvssubmodulos_IdRolFk",
                 table: "genericosvssubmodulos",
-                column: "RolId");
+                column: "IdRolFk");
 
             migrationBuilder.CreateIndex(
                 name: "IX_maestrovssubmodulo_IdModuloMaestroFk",

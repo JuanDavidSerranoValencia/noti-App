@@ -3,19 +3,16 @@ using System;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace Infrastructure.Migrations
+namespace Infrastructure.Data.Migrations
 {
     [DbContext(typeof(NotiAppContext))]
-    [Migration("20231018040129_InitialCreate")]
-    partial class InitialCreate
+    partial class NotiAppContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -43,16 +40,13 @@ namespace Infrastructure.Migrations
                     b.Property<int>("IdRolFk")
                         .HasColumnType("int");
 
-                    b.Property<int?>("RolId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("IdMaestroSubmoduloFk");
 
                     b.HasIndex("IdPermisoGenerioFk");
 
-                    b.HasIndex("RolId");
+                    b.HasIndex("IdRolFk");
 
                     b.ToTable("genericosvssubmodulos", (string)null);
                 });
@@ -215,7 +209,9 @@ namespace Infrastructure.Migrations
 
                     b.HasOne("Core.Entities.Rol", "Rol")
                         .WithMany("GenericosVsSubmodulos")
-                        .HasForeignKey("RolId");
+                        .HasForeignKey("IdRolFk")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("MaestroVsSubmodulo");
 
