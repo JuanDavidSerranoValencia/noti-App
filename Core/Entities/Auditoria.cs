@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Core.Entities
 {
-    public class Auditoria
+    public class Auditoria:BaseEntity
     {
         public string NombreUsuarioAuditoria { get; set; }
         public int DescAccion { get; set; }

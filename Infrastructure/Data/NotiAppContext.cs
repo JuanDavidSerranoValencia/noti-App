@@ -13,15 +13,23 @@ public class NotiAppContext : DbContext
     public NotiAppContext(DbContextOptions options) : base(options)
     {
     }
-    
-    public DbSet<GenericoVsSubmodulo> GenericosVsSubmodulos { get; set; }
-    public DbSet<MaestroVsSubmodulo> MaestrosVsSubmodulos { get; set; }
-    public DbSet<ModuloMaestro> ModulosMaestros { get; set; }
-    public DbSet<PermisoGenerico> PermisosGenericos { get; set; }
-    public DbSet<Rol> Roles { get; set; }
-    public DbSet<RolMaestro> RolesMaestros { get; set; }
-    public DbSet<SubModulo> SubsModulos { get; set; }
 
+    public DbSet<GenericoVsSubmodulo> GenericoVsSubmodulos { get; set; }
+    public DbSet<MaestroVsSubmodulo> MaestroVsSubmodulos { get; set; }
+    public DbSet<ModuloMaestro> ModuloMaestros { get; set; }
+    public DbSet<PermisoGenerico> PermisoGenericos { get; set; }
+    public DbSet<Rol> Rols { get; set; }
+    public DbSet<RolMaestro> RolMaestros { get; set; }
+    public DbSet<SubModulo> SubModulos { get; set; }
+    public DbSet<Radicado> Radicados { get; set; }
+    public DbSet<HiloRepuestaNoti> HiloRepuestaNotis { get; set; }
+    public DbSet<Formato> Formatos { get; set; }
+    public DbSet<BlockChain> BlockChains { get; set; }
+    public DbSet<Auditoria> Auditorias { get; set; }
+    public DbSet<TipoNoti> TipoNotis { get; set; }
+    public DbSet<ModuloNotificacion> ModuloNotificacions { get; set; }
+    public DbSet<EstadoNotificacion> EstadoNotificacions { get; set; }
+     public DbSet<TipoRequerimiento> TipoRequerimientos { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
