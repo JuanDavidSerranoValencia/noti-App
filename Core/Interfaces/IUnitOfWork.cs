@@ -7,7 +7,23 @@ namespace Core.Interfaces
 {
     public interface IUnitOfWork
     {
-        
-        Task <int> SaveAsync();
+        IAuditoriaRepository Auditorias { get; }
+        IBlockChainRepository BlockChains { get; }
+        IEstadoNotificacionRepository EstadoNotificaciones { get; }
+        IFormatoRepository Formatos { get; }
+        IGenericoVsSubmoduloRepository GenericoVsSubmodulos { get; }
+        IHiloRespuestaNotiRepository HiloRespuestaNotis { get; }
+        IMaestroVsSubmoduloRepository MaestroVsSubmodulos { get; }
+        IModuloMaestroRepository ModuloMaestros { get; }
+        IModuloNotificacionRepository ModuloNotificaciones { get; }
+        IPermisoGenericoRepository PermisoGenericos { get; }
+        IRadicadoRepository Radicados { get; }
+        IRolMaestroRepository RolMaestros { get; }
+        IRolRepository Roles { get; }
+        ISubModuloRepository SubModulos { get; }
+        ITipoNotiRepository TipoNotis { get; }
+        ITipoRequerimientoRepository TipoRequerimientos { get; }
+
+        Task<int> SaveAsync();
     }
 }
