@@ -34,10 +34,10 @@ namespace Infrastructure.Data.Configuration
             builder.HasOne(p=>p.MaestroVsSubmodulo)
             .WithMany(p =>p.GenericosVsModulos)
             .HasForeignKey(p=>p.IdMaestroSubmoduloFk);
-
+/*
             builder.HasOne(p=>p.Rol)
             .WithMany(p=>p.GenericosVsSubmodulos)
-            .HasForeignKey(p =>p.IdRolFk);
+            .HasForeignKey(p =>p.IdRolFk);*/
         }
     }
 }

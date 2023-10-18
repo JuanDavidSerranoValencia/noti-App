@@ -8,6 +8,7 @@ namespace Core.Entities;
 public class Rol : BaseEntity
 {
     public string Nombre { get; set; }
+
     public ICollection<RolMaestro> RolesMaestros { get; set; }
     public ICollection<GenericoVsSubmodulo> GenericosVsSubmodulos { get; set; }
 }

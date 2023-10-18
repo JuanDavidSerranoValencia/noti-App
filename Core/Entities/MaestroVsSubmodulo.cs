@@ -12,6 +12,7 @@ public class MaestroVsSubmodulo:BaseEntity
     public int IdModuloMaestroFk { get; set; }
     public ModuloMaestro ModuloMaestro { get; set; }
 
+
     [Required]
 
     public int IdSubModuloFk { get; set; }

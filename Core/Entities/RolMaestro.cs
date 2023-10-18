@@ -8,6 +8,7 @@ namespace Core.Entities;
 
 public class RolMaestro : BaseEntity
 {
+    
 
     [Required]
     public int IdRolFk { get; set; }

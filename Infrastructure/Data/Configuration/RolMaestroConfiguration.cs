@@ -13,7 +13,7 @@ namespace Infrastructure.Data.Configuration
     {
         public void Configure(EntityTypeBuilder<RolMaestro> builder)
         {
-             builder.ToTable("rol");
+             builder.ToTable("rolmaestro");
 
             builder.HasKey(p => p.Id);
             builder.Property(p => p.Id);
@@ -30,8 +30,8 @@ namespace Infrastructure.Data.Configuration
             builder.HasOne(p=> p.Rol)
             .WithMany(p=>p.RolesMaestros)
             .HasForeignKey(p=>p.IdRolFk);
-
-            builder.HasOne(p=>p.ModuloMaestro)
+            
+        builder.HasOne(p=>p.ModuloMaestro)
             .WithMany(p=>p.RolesMaestros)
             .HasForeignKey(p=>p.IdModuloMaestroFk);
         }
