@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ApiNotiApi.Controllers
 {
-    public class PermisoGenericoController
+    public class PermisoGenericoController:BaseControllerApi
     {
         
     }

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ApiNotiApi.Controllers
 {
-    public class RolMaestroController
+    public class RolMaestroController:BaseControllerApi
     {
         
     }

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ApiNotiApi.Controllers
 {
-    public class TipoRequerimientoController
+    public class TipoRequerimientoController:BaseControllerApi
     {
         
     }
