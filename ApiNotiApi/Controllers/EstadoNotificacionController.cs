@@ -29,7 +29,7 @@ namespace ApiNotiApi.Controllers
         {
             var estadoNoti = await _unitOfWork.EstadoNotificaciones.GetAllAsync();
             /* return Ok(auditors); */
-            return _mapper.Map<List<EstadoNotificacionDto>>(estadoNoti );
+            return _mapper.Map<List<EstadoNotificacionDto>>(estadoNoti);
         }
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]

@@ -19,8 +19,9 @@ public class UnitOfWork : IUnitOfWork, IDisposable
     private FormatoRepository _formatos { get; set; }
     private GenericoVsSubmoduloRepository _genericoVsSubmodulos { get; set; }
     private HiloRespuestaNotiRepository _hiloRespuestaNotis { get; set; }
-    private MaestroVsSubmoduloRepository _maestroVsSubmodulos { get; set; }
+    private MaestroVsSubmoduloRepository _maestroVsSubmodulos { get; set; } 
     private ModuloMaestroRepository _moduloMaestros { get; set; }
+    private ModuloNotificacionRepository _moduloNotificaciones  { get; set; }
     private PermisoGenericoRepository _permisoGenericos { get; set; }
     private RadicadoRepository _radicados { get; set; }
     private RolRepository _rols { get; set; }
@@ -57,7 +58,7 @@ public class UnitOfWork : IUnitOfWork, IDisposable
         }
     }
 
-    public EstadoNotificacionRepository EstadoNotificaciones
+    public IEstadoNotificacionRepository EstadoNotificaciones
     {
         get
         {
@@ -69,7 +70,7 @@ public class UnitOfWork : IUnitOfWork, IDisposable
         }
     }
 
-    public FormatoRepository Formatos
+    public IFormatoRepository Formatos
     {
         get
         {
@@ -82,7 +83,7 @@ public class UnitOfWork : IUnitOfWork, IDisposable
 
     }
 
-    public GenericoVsSubmoduloRepository GenericoVsSubmodulos
+    public IGenericoVsSubmoduloRepository GenericoVsSubmodulos
     {
         get
         {
@@ -95,7 +96,7 @@ public class UnitOfWork : IUnitOfWork, IDisposable
 
     }
 
-    public HiloRespuestaNotiRepository HiloRespuestaNotis
+    public IHiloRespuestaNotiRepository HiloRespuestaNotis
     {
         get
         {
@@ -109,7 +110,7 @@ public class UnitOfWork : IUnitOfWork, IDisposable
     }
 
 
-    public MaestroVsSubmoduloRepository MaestroVsSubmodulos
+    public IMaestroVsSubmoduloRepository MaestroVsSubmodulos
     {
         get
         {
@@ -122,7 +123,7 @@ public class UnitOfWork : IUnitOfWork, IDisposable
 
     }
 
-    public ModuloMaestroRepository ModuloMaestros
+    public IModuloMaestroRepository ModuloMaestros
     {
         get
         {
@@ -134,7 +135,19 @@ public class UnitOfWork : IUnitOfWork, IDisposable
         }
 
     }
-    public PermisoGenericoRepository PermisoGenericos
+     public IModuloNotificacionRepository ModuloNotificaciones
+    {
+        get
+        {
+            if (_moduloNotificaciones == null)
+            {
+                _moduloNotificaciones = new ModuloNotificacionRepository(_context);
+            }
+            return _moduloNotificaciones;
+        }
+
+    }
+    public IPermisoGenericoRepository PermisoGenericos
     {
         get
         {
@@ -147,7 +160,8 @@ public class UnitOfWork : IUnitOfWork, IDisposable
 
     }
 
-    public RadicadoRepository Radicados
+
+    public IRadicadoRepository Radicados
     {
         get
         {
@@ -161,7 +175,7 @@ public class UnitOfWork : IUnitOfWork, IDisposable
     }
 
 
-    public RolRepository Rols
+    public IRolRepository Roles
     {
         get
         {
@@ -174,7 +188,7 @@ public class UnitOfWork : IUnitOfWork, IDisposable
 
     }
 
-    public RolMaestroRepository RolMaestros
+    public IRolMaestroRepository RolMaestros
     {
         get
         {
@@ -188,7 +202,7 @@ public class UnitOfWork : IUnitOfWork, IDisposable
     }
 
 
-    public SubModuloRepository SubModulos
+    public ISubModuloRepository SubModulos
     {
         get
         {
@@ -202,7 +216,7 @@ public class UnitOfWork : IUnitOfWork, IDisposable
     }
 
 
-    public TipoNotiRepository TipoNotis
+    public ITipoNotiRepository TipoNotis
     {
         get
         {
@@ -215,7 +229,7 @@ public class UnitOfWork : IUnitOfWork, IDisposable
 
     }
 
-    public TipoRequerimientoRepository TipoRequerimientos
+    public ITipoRequerimientoRepository TipoRequerimientos
     {
         get
         {
@@ -227,34 +241,6 @@ public class UnitOfWork : IUnitOfWork, IDisposable
         }
 
     }
-
-    IEstadoNotificacionRepository IUnitOfWork.EstadoNotificaciones => throw new NotImplementedException();
-
-    IFormatoRepository IUnitOfWork.Formatos => throw new NotImplementedException();
-
-    IGenericoVsSubmoduloRepository IUnitOfWork.GenericoVsSubmodulos => throw new NotImplementedException();
-
-    IHiloRespuestaNotiRepository IUnitOfWork.HiloRespuestaNotis => throw new NotImplementedException();
-
-    IMaestroVsSubmoduloRepository IUnitOfWork.MaestroVsSubmodulos => throw new NotImplementedException();
-
-    IModuloMaestroRepository IUnitOfWork.ModuloMaestros => throw new NotImplementedException();
-
-    public IModuloNotificacionRepository ModuloNotificaciones => throw new NotImplementedException();
-
-    IPermisoGenericoRepository IUnitOfWork.PermisoGenericos => throw new NotImplementedException();
-
-    IRadicadoRepository IUnitOfWork.Radicados => throw new NotImplementedException();
-
-    IRolMaestroRepository IUnitOfWork.RolMaestros => throw new NotImplementedException();
-
-    public IRolRepository Roles => throw new NotImplementedException();
-
-    ISubModuloRepository IUnitOfWork.SubModulos => throw new NotImplementedException();
-
-    ITipoNotiRepository IUnitOfWork.TipoNotis => throw new NotImplementedException();
-
-    ITipoRequerimientoRepository IUnitOfWork.TipoRequerimientos => throw new NotImplementedException();
 
     public UnitOfWork(NotiAppContext context)
     {
